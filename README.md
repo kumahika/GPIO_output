@@ -69,13 +69,13 @@ $ rostopic list
 ```
 Screw operation test
 ```sh
-$ rostopic pub /screw/pwm Int64 -- '3'
+$ rostopic pub /screw/pwm std_msgs/Int64 -- '3'
 ON OF
 mid
 ```
 Gripper operation test
 ```sh
-$ rostopic pub /gripper/pwm Int64 -- '3'
+$ rostopic pub /gripper/pwm std_msgs/Int64 -- '3'
 Open and Close
 mid
 ```
@@ -84,7 +84,7 @@ mid
 You can set up pwm duty and duration of screw and gripper.
 Execute the following code or specify options in the launch file.
 ```sh
-$ rosparam set /duration_screw '2' # unit is sec
+$ rosparam set /screw_subscreiber/duration_screw '2' # unit is sec
 $ rosparam set /duration_gripper '2' # unit is sec
-$ rosparam set /pwm_screw '100' # You can set duty between -100 and 100.
+$ rosparam set /screw_subscreiber/pwm_screw '100' # You can set duty between -100 and 100.
 ```
