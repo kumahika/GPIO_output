@@ -1,7 +1,7 @@
 <launch>
   <node name = "screw_subscriber" pkg = "GPIO_output" type = "screw_sub.py" output = "screen">
-    <param name = "pwm_screw" value = "100"/>
-    <param name = "duration_screw" value = "3" />
+    <param name = "/pwm_screw" value = "100"/>
+    <param name = "/duration_screw" value = "3" />
   </node>
 
   <node name = "gripper_subscriber" pkg = "GPIO_output" type = "gripper.py" output = "screen">
@@ -11,3 +11,4 @@
   <node name = "sonar_publisher" pkg = "GPIO_output" type = "sonar_pub.py" output = "screen"/>
 
 </launch>
+
