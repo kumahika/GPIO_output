@@ -3,7 +3,7 @@
 import pigpio
 import time
 import rospy
-#from geomtry_msgs.msg import Twist
+#from geomtry_msgs.msg import Twist 
 from std_msgs.msg import Int64
 
 def callback(msg):
@@ -59,3 +59,4 @@ def gripper_subscriber():
 
 if __name__ == '__main__':
     gripper_subscriber()
+

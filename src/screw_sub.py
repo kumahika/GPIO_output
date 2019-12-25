@@ -9,10 +9,10 @@ from std_msgs.msg import Int64
 def callback(msg):
     gpio_pin = 13
     control_flag = msg.data
-    norm_pwm = rospy.get_param('/pwm_screw')
+    norm_pwm = rospy.get_param('~pwm_screw')
     duty = (250 * norm_pwm) + 750000
     print("duty%d" % duty)
-    duration = rospy.get_param('/duration_screw')
+    duration = rospy.get_param('~duration_screw')
     pi = pigpio.pi()
     pi.set_mode(gpio_pin, pigpio.OUTPUT)
     pi.hardware_PWM(gpio_pin, 500, 750000)
@@ -34,7 +34,7 @@ def callback(msg):
         pi.set_mode(gpio_pin, pigpio.INPUT)
         pi.stop()
 
-     elif control_flag == 3:
+    elif control_flag == 3:
         print("ON OFF")
         pi.hardware_PWM(gpio_pin, 500, duty)
         time.sleep(duration)
